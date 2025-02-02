@@ -1,0 +1,1227 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  
+  .app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.theme-toggle {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+  
+/* Section Styling */
+
+
+#home {
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.csv-btn{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Parent Flexbox */
+.personal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Text Content */
+.portfolio-content {
+  flex: 1;
+  text-align: left;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 1s ease-in-out forwards;
+}
+
+.portfolio-content h1 {
+  font-size: 2.8rem;
+}
+
+.portfolio-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #0ef;
+}
+
+.text {
+  color: #0ef;
+}
+
+/* Objective Text */
+.objective {
+  font-size: 16px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Social Media Icons */
+.home-scl {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.home-scl a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 22px;
+  color: #0ef;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.home-scl a:hover {
+  background: #0ef;
+  color: #111;
+  box-shadow: 0 0 10px #0ef;
+}
+
+/* Profile Image */
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #0ef;
+  animation: fadeInZoom 1s ease-in-out forwards;
+  /* animation: rotateBorder 2s linear infinite;  */
+
+}
+
+.image::before {
+  content: "";
+  position: absolute;
+  
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: red; 
+  border-left-color: red;
+  animation: rotateBorder 2s linear infinite; 
+}
+
+
+/* skills */
+#skills{
+  padding: 100px 10%;
+  text-align: center;
+}
+.skills-header{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+
+  font-size: 30px;
+  font-weight: bold;
+  color: #0ef;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards;
+}
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+
+
+/* Technical Skills Section */
+.technical-skills {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+
+
+/* Skills List Container */
+.technical-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+  animation: slideUp 1s ease-out;
+}
+
+/* Individual Skill Style */
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  
+  
+}
+
+.skill i {
+  font-size: 40px;
+  transition: color 0.3s ease;
+}
+
+/* Hover Animation */
+.skill:hover {
+  transform: scale(2);
+
+}
+
+.skill:hover i {
+  color: #ff7f50;
+}
+
+
+.skill span {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+
+}
+
+/*--------------------------------------- Exprience----------------------- */
+
+#experience {
+  padding: 80px 10%;
+  text-align: center;
+
+}
+
+.col-header {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  
+  /* Gradient Text */
+  background: linear-gradient(90deg, #e50c66, #0aacd8, #ff0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+ cursor: pointer;
+  display: inline-block;
+  visibility: visible;
+  animation: zoomIn 1.20s ease-out forwards;
+}
+
+/* Define the zoomIn animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.experience-container {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInUp 1.5s ease-out;
+  opacity: 0;
+  animation: fadeInUp 2s forwards;
+}
+
+/* Experience Item Style */
+.experience-item {
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.experience-item h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.experience-item ul {
+  font-size: 16px;
+
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.experience-item li {
+  margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.experience-item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ---------------Projects ------------------------------ */
+
+#projects {
+  padding: 80px 10%;
+  text-align: center;
+  
+}
+
+
+
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+.project {
+
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.project:hover {
+
+  transform: scale(1.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.project h3 {
+  font-size: 1.25rem;
+
+}
+
+.project p {
+  font-size: 1rem;
+  
+  margin-top: 0.5rem;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+/* -----------------reviews------------------------------- */
+#reviews {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 1s ease; /* Smooth transition when sliding */
+}
+
+.review-item:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.review-item {
+  width: 30%;
+  padding: 15px;
+  box-shadow: 0 2px 8px;
+  border-radius: 8px;
+  text-align: center;
+ cursor: pointer;
+  opacity: 0;
+  animation: slideInLeft 0.5s ease-out forwards; /* Fade-in effect on entry */
+}
+
+
+.review-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* services--------------------------------------- */
+#services {
+  padding: 80px 10%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+
+#services.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Services Container */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Service Item */
+.service-item {
+  
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px ;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px;
+}
+
+/* Service Details */
+.service-details img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.service-details p {
+  font-size: 14px;
+ 
+}
+
+/* ---------------Contact--------------------------------------- */
+#contact {
+  padding: 80px 10%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Social Media Links */
+.home-scl {
+ 
+  justify-content: center;
+ 
+}
+
+
+
+
+footer {
+
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 1em;
+ 
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid transparent; /* Cursor effect */
+  animation: typing 5.5s steps(50) 1s infinite, blink 1.75s step-end infinite;
+    background: linear-gradient(120deg, #e50c66, #0aacd8, #ff0000);/* Gradient colors */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; 
+}
+
+
+  
+  
+
+  /* -------- */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+  }
+  
+  
+  
+  .company-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .experience {
+    margin-bottom: 30px;
+  }
+  
+  .skill {
+    margin: 20px 0;
+  }
+  
+  .skill h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    width: 100%;
+    height: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress {
+    background-color: #61dafb;
+    height: 100%;
+    border-radius: 10px;
+    width: 0%;
+  }
+  
+  .percent {
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+  }
+  
+  @keyframes progressBarAnimation {
+    from {
+      width: 0%;
+    }
+    to {
+      width: var(--progress);
+    }
+  }
+  
+  .skill .progress {
+    animation: progressBarAnimation 2s ease-in-out forwards;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #001b29;;
+    color: white;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: #111;
+  }
+  
+  body.dark-mode .navbar .nav-links a {
+    color: white;
+  }
+  
+  body.dark-mode .theme-toggle {
+    color: white;
+  }
+  
+  /* Day-Night Toggle */
+  #theme-toggle {
+    background: none;
+    color: #f5f5f5;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+
+  .top{
+    position: fixed;
+    bottom: 2.1rem;
+    right: 2.1rem;
+}
+.top i{
+    color: #000;
+    background: #0ef;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+
+/* Scrren resize */
+  
+@media (max-width: 1024px) {
+  .nav-links li {
+    margin: 0 15px;
+}
+  .personal {
+      flex-direction: column;
+      text-align: center;
+  }
+  .portfolio-content {
+      text-align: center;
+  }
+  .image img {
+      height: 250px;
+      width: 250px;
+  }
+  /* skills */
+  #skills {
+    padding: 80px 10%;
+  }
+
+  .skills-container {
+    padding: 40px;
+  }
+
+  .technical-skills-list {
+    gap: 30px;
+  }
+
+  .skill {
+    width: 100px;
+    height: 100px;
+  }
+
+  .skill i {
+    font-size: 40px;
+  }
+
+  .heading1 {
+    font-size: 28px;
+  }
+
+  .skill span {
+    font-size: 16px;
+  }
+  /* ----------------------------Project--------------------------------------------------------- */
+
+
+.projects-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for small desktop */
+}
+
+.project h3 {
+    font-size: 1.25rem;
+}
+
+.project p {
+    font-size: 1rem;
+}
+
+/* --------------review */
+#reviews {
+  padding: 80px 15%;
+}
+
+.review-item {
+  width: 30%; /* 3 reviews per row */
+  /* ------------------Servises--------------------- */
+  #services {
+    padding: 60px 8%;
+  }
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    text-align: center;
+    padding: 15px 0;
+    transition: all 0.3s ease-in-out;
+}
+.nav-links.active {
+    display: flex;
+}
+.nav-links li {
+    margin: 15px 0;
+}
+.menu-toggle {
+    display: block;
+}
+
+  /* -------home */
+  #home {
+      padding: 80px 5%;
+  }
+  .portfolio-content h1 {
+      font-size: 2.2rem;
+  }
+  .portfolio-content h2 {
+      font-size: 1.8rem;
+  }
+  .objective {
+      font-size: 14px;
+  }
+
+  /* skills */
+  #skills {
+    padding: 70px 8%;
+  }
+
+  .skills-container {
+    padding: 30px;
+  }
+
+  .technical-skills-list {
+    gap: 25px;
+  }
+
+  .skill {
+    width: 90px;
+    height: 90px;
+  }
+
+  .skill i {
+    font-size: 35px;
+  }
+
+  .heading1 {
+    font-size: 26px;
+  }
+
+  .skill span {
+    font-size: 15px;
+  }
+
+  
+  /* --------------------------------------------------------------Project-------------------------------- */
+  
+
+.projects-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablet */
+}
+
+.project h3 {
+    font-size: 1.125rem;
+}
+
+.project p {
+    font-size: 0.95rem;
+}
+
+/* review */
+#reviews {
+  padding: 70px 10%;
+}
+
+.review-item {
+  width: 45%; /* 2 reviews per row on tablets */
+}
+
+/* -------------servives------------------ */
+#services {
+  padding: 50px 5%;
+}
+.services-container {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.service-item {
+  padding: 15px;
+}
+.service-details img {
+  width: 70px;
+}
+.service-details p {
+  font-size: 13px;
+}
+/* ---------contact------------------------------ */
+#contact {
+  padding: 30px;
+}
+
+
+
+form {
+  gap: 10px;
+}
+
+input, textarea {
+  width: 90%;
+}
+
+button {
+  width: 90%;
+}
+
+footer {
+  font-size: 0.9em;
+  padding: 15px;
+}
+
+.footer-content p {
+  font-size: 1em; /* Adjust font size for mobile */
+}
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+}
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.menu-toggle {
+    /* display: block;
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    transition: transform 0.3s ease-in-out; */
+}
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+.nav-links li {
+    padding: 10px 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+}
+.nav-links a:hover {
+    background: #444;
+    padding: 10px;
+}
+.theme-toggle {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+  /* home- */
+  .portfolio-content h1 {
+      font-size: 1.8rem;
+  }
+  .portfolio-content h2 {
+      font-size: 1.5rem;
+  }
+  .image img {
+      height: 200px;
+      width: 200px;
+  }
+  .image::before {
+    content: "";
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: red; 
+    border-left-color: red;
+    animation: rotateBorder 2s linear infinite; 
+  }
+  .home-scl {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .home-scl a {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      
+  }
+
+  /* skills */
+  #skills,#experience,#projects,#reviews,#services {
+    padding: 50px 5%;
+    margin-left: 80px;
+   
+  }
+  #home{
+    padding: 50px 5%;
+    margin-left: 80px;
+    margin-top: 85px;
+  }
+
+  .skills-container {
+    padding: 20px;
+  }
+
+  .technical-skills-list {
+    gap: 10px;
+  }
+
+  .skill {
+    width: 80px;
+    height: 80px;
+  }
+
+  .skill i {
+    font-size: 30px;
+  }
+
+  .heading1 {
+    font-size: 24px;
+  }
+
+  .skill span {
+    font-size: 14px;
+  }
+
+  /* -------------------Project-------------------------------- */
+
+
+.projects-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+}
+
+.project h3 {
+    font-size: 1.1rem;
+}
+
+.project p {
+    font-size: 0.875rem;
+}
+/* ------------------------------review ------------------------*/
+#reviews {
+  padding: 60px 5%;
+}
+
+.review-item {
+  width: 100%; /* Full width on small screens */
+  margin-bottom: 20px; /* Space between items */
+}
+
+/* --------------------------------services-------------------------------- */
+#services {
+  padding: 40px 5%;
+}
+.services-container {
+  grid-template-columns: 1fr; /* Single column */
+}
+.service-item {
+  padding: 10px;
+}
+.service-details img {
+  width: 60px;
+}
+.service-details p {
+  font-size: 12px;
+}
+
+#contact{
+margin-left: 80px;
+}
+
+footer {
+
+ margin-top: 10px;
+ text-align: center;
+ margin-left: 80px;
+  
+}
+}
+
+
+
+@keyframes slideUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Fade-In from Left Animation */
+@keyframes fadeInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Fade-In Zoom Animation */
+@keyframes fadeInZoom {
+  0% {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
